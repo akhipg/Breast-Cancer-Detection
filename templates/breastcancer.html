@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Breast Cancer Detection</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Breast Cancer Detection</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict The Breast Cancer
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+    <!--1-->    <div class="input-field col s4">
+            <label for="first_name"><b>Radius mean</b></label>
+            <br>
+          <input placeholder="Radius mean in float" name="Radius mean" id="first_name" type="text" class="validate">
+        </div>
+    <!--2--> 
+        <div class="input-field col s4">
+
+          <label for="last_name"><b>Texture mean </b></label>
+            <br>
+          <input id="last_name" name="Texture mean" placeholder="Texture mean in float"  type="text" class="validate">
+
+        </div>
+    <!--3--> 
+        <div class="input-field col s4">
+            <label for="_name"><b>Perimeter mean</b></label>
+            <br>
+          <input id="_name" name="Perimeter mean" placeholder="Perimeter mean in float" type="text" class="validate">
+
+        </div>
+
+    <!--4-->    <div class="input-field col s4">
+            <label for="a"><b>Area mean</b></label>
+            <br>
+          <input placeholder="Area mean in float" name="Area mean" id="a" type="text" class="validate">
+        </div>
+    <!--5--> 
+        <div class="input-field col s4">
+
+          <label for="b"><b>Smoothness mean </b></label>
+            <br>
+          <input id="b" name="Smoothness mean" placeholder="Smoothness mean in float"  type="text" class="validate">
+
+        </div>
+    <!--6--> 
+        <div class="input-field col s4">
+            <label for="c"><b>Compactness mean</b></label>
+            <br>
+          <input id="c" name="Compactness mean" placeholder="Compactness mean in float" type="text" class="validate">
+
+        </div>
+
+    <!--7-->    <div class="input-field col s4">
+            <label for="d"><b>Concavity mean</b></label>
+            <br>
+          <input placeholder="Concavity mean in float" name="Concavity mean" id="d" type="text" class="validate">
+        </div>
+    <!--8--> 
+        <div class="input-field col s4">
+
+          <label for="e"><b>Concave points mean </b></label>
+            <br>
+          <input id="e" name="Concave points mean" placeholder="Concave points mean in float"  type="text" class="validate">
+
+        </div>
+    <!--9--> 
+        <div class="input-field col s4">
+            <label for="f"><b>Symmetry mean</b></label>
+            <br>
+          <input id="f" name="Symmetry mean" placeholder="Symmetry mean in float" type="text" class="validate">
+
+        </div>
+ 
+    <!--10-->    <div class="input-field col s4">
+            <label for="g"><b>Fractal dimension mean</b></label>
+            <br>
+          <input placeholder="Fractal dimension mean in float" name="Fractal dimension mean" id="h" type="text" class="validate">
+        </div>
+    <!--11--> 
+        <div class="input-field col s4">
+
+          <label for="i"><b>Radius se </b></label>
+            <br>
+          <input id="i" name="Radius se" placeholder="Radius se in float"  type="text" class="validate">
+
+        </div>
+    <!--12--> 
+        <div class="input-field col s4">
+            <label for="j"><b>Texture se</b></label>
+            <br>
+          <input id="j" name="Texture se" placeholder="Texture se in float" type="text" class="validate">
+
+        </div>
+
+    <!--13-->    <div class="input-field col s4">
+            <label for="k"><b>Perimeter se</b></label>
+            <br>
+          <input placeholder="Perimeter se in float" name="Perimeter se" id="k" type="text" class="validate">
+        </div>
+    <!--14--> 
+        <div class="input-field col s4">
+
+          <label for="l"><b>Area se </b></label>
+            <br>
+          <input id="l" name="Area se" placeholder="Area se in float"  type="text" class="validate">
+
+        </div>
+    <!--15--> 
+        <div class="input-field col s4">
+            <label for="m"><b>Smoothness se</b></label>
+            <br>
+          <input id="m" name="Smoothness se" placeholder="Smoothness se in float" type="text" class="validate">
+
+        </div>
+
+    <!--16-->    <div class="input-field col s4">
+            <label for="n"><b>Compactness se</b></label>
+            <br>
+          <input placeholder="Compactness se in float" name="Compactness se" id="n" type="text" class="validate">
+        </div>
+    <!--17--> 
+        <div class="input-field col s4">
+
+          <label for="o"><b>Concavity se </b></label>
+            <br>
+          <input id="o" name="Concavity se" placeholder="Concavity se in float"  type="text" class="validate">
+
+        </div>
+    <!--18--> 
+        <div class="input-field col s4">
+            <label for="p"><b>Concave points se</b></label>
+            <br>
+          <input id="p" name="Concave points se" placeholder="Concave points se in float" type="text" class="validate">
+
+        </div>
+
+    <!--19-->    <div class="input-field col s4">
+            <label for="q"><b>Symmetry se</b></label>
+            <br>
+          <input placeholder="Symmetry se in float" name="Symmetry se" id="q" type="text" class="validate">
+        </div>
+    <!--20--> 
+        <div class="input-field col s4">
+
+          <label for="r"><b>Fractal dimension se </b></label>
+            <br>
+          <input id="r" name="Fractal dimension se" placeholder="Fractal dimension se in float"  type="text" class="validate">
+
+        </div>
+    <!--21--> 
+        <div class="input-field col s4">
+            <label for="s"><b>Radius worst</b></label>
+            <br>
+          <input id="s" name="Radius worst" placeholder="Radius worst in float" type="text" class="validate">
+
+        </div>
+
+    <!--22-->    <div class="input-field col s4">
+            <label for="t"><b>Texture worst</b></label>
+            <br>
+          <input placeholder="Texture worst in float" name="Texture worst" id="t" type="text" class="validate">
+        </div>
+    <!--23--> 
+        <div class="input-field col s4">
+
+          <label for="u"><b>Perimeter worst </b></label>
+            <br>
+          <input id="u" name="Perimeter worst" placeholder="Perimeter worst in float"  type="text" class="validate">
+
+        </div>
+    <!--24--> 
+        <div class="input-field col s4">
+            <label for="v"><b>Area worst</b></label>
+            <br>
+          <input id="v" name="Area worst" placeholder="Area worst in float" type="text" class="validate">
+
+        </div>
+
+    <!--25-->    <div class="input-field col s4">
+            <label for="w"><b>Smoothness worst</b></label>
+            <br>
+          <input placeholder="Smoothness worst in float" name="Smoothness worst" id="w" type="text" class="validate">
+        </div>
+    <!--26--> 
+        <div class="input-field col s4">
+
+          <label for="x"><b>Compactness worst </b></label>
+            <br>
+          <input id="x" name="Compactness worst" placeholder="Compactness worst in float"  type="text" class="validate">
+
+        </div>
+    <!--27--> 
+        <div class="input-field col s4">
+            <label for="y"><b>Concavity worst</b></label>
+            <br>
+          <input id="y" name="Concavity worst" placeholder="Concavity worst in float" type="text" class="validate">
+
+        </div>
+
+    <!--28-->    <div class="input-field col s4">
+            <label for="z"><b>Concave points worst</b></label>
+            <br>
+          <input placeholder="Concave points worst in float" name="Concave points worst" id="z" type="text" class="validate">
+        </div>
+    <!--29--> 
+        <div class="input-field col s4">
+
+          <label for="ap"><b>Symmetry worst </b></label>
+            <br>
+          <input id="ap" name="Symmetry worst" placeholder="Symmetry worst in float"  type="text" class="validate">
+
+        </div>
+    <!--30--> 
+        <div class="input-field col s4">
+            <label for="apg"><b>Fractal dimension worst</b></label>
+            <br>
+          <input id="apg" name="Fractal dimension worst" placeholder="Fractal dimension worst in float" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Cancer</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        {{pred}}<br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div> 
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
